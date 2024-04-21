@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from pyvirtualdisplay import Display
+import json
 
 from time import sleep
 focus_code = """test_coords = ol.proj.fromLonLat([-77.03637,38.89511000]); OLMap.setView(new ol.View({center: test_coords,zoom: 8}));"""
@@ -52,3 +53,5 @@ if planes:
         if planes[plane]["military"]:
             print(planes[plane])
 
+with open("./planes.json") as file:
+    file.write(json.dumps(planes))
