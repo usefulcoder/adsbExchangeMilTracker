@@ -4,7 +4,7 @@ from pyvirtualdisplay import Display
 
 from time import sleep
 focus_code = """test_coords = ol.proj.fromLonLat([-77.03637,38.89511000]); OLMap.setView(new ol.View({center: test_coords,zoom: 8}));"""
-
+plane_script = """return g.planes"""
 
 display = Display(visible=0, size=(800, 600))
 display.start()
@@ -30,7 +30,7 @@ driver.get("https://globe.adsbexchange.com")
 
 driver.execute_script(focus_code)
 sleep(10)
-planes = driver.execute_script("""return g.planes""")
+planes = driver.execute_script(plane_script)
 driver.quit()
 display.stop()
 for plane in planes:
