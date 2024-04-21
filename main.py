@@ -36,6 +36,7 @@ try:
 except Exception as e:
     planes = False
 while not planes and attempts < 50:
+    sleep(1)
     try:
         planes = driver.execute_script(plane_script)
     except:
@@ -44,10 +45,11 @@ while not planes and attempts < 50:
         print(attempts)
         continue
     
-    sleep(1)
+    
 driver.quit()
 display.stop()
-for plane in planes:
-    if planes[plane]["military"]:
-        print(planes[plane])
+if planes:
+    for plane in planes:
+        if planes[plane]["military"]:
+            print(planes[plane])
 
