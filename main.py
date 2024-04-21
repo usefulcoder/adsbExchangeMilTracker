@@ -30,9 +30,15 @@ driver.get("https://globe.adsbexchange.com")
 
 sleep(2)
 driver.execute_script(focus_code)
-planes = driver.execute_script(plane_script)
-while not planes:
+try:
     planes = driver.execute_script(plane_script)
+except Exception as e:
+    planes = False
+while not planes:
+    try:
+        planes = driver.execute_script(plane_script)
+    except:
+        continue
     sleep(3)
 driver.quit()
 display.stop()
