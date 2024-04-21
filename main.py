@@ -39,10 +39,11 @@ while not planes and attempts < 50:
     try:
         planes = driver.execute_script(plane_script)
     except:
+        attempts += 1
+        print(planes)
+        print(attempts)
         continue
-    attempts += 1
-    print(planes)
-    print(attempts)
+    
     sleep(1)
 driver.quit()
 display.stop()
