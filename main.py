@@ -6,7 +6,7 @@ from time import sleep
 focus_code = """test_coords = ol.proj.fromLonLat([-77.03637,38.89511000]); OLMap.setView(new ol.View({center: test_coords,zoom: 8}));"""
 
 
-display = Display(visible=1, size=(800, 600))
+display = Display(visible=0, size=(800, 600))
 display.start()
 options = Options()
 # options.add_argument("--headless=new")
