@@ -41,6 +41,8 @@ while not planes and attempts < 50:
     except:
         continue
     attempts += 1
+    print(planes)
+    print(attempts)
     sleep(1)
 driver.quit()
 display.stop()
