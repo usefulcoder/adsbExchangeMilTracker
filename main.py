@@ -23,15 +23,17 @@ options.add_argument("--enable-javascript")
 # options.add_argument('--disable-blink-features=AutomationControlled')
 
 
-driver=webdriver.Chrome(options=options)
+driver=webdriver.Chrome()
 # driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
 driver.execute_cdp_cmd('Network.setUserAgentOverride', {"userAgent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.53 Safari/537.36'})
 driver.get("https://globe.adsbexchange.com")
 
 sleep(2)
 driver.execute_script(focus_code)
-sleep(10)
 planes = driver.execute_script(plane_script)
+while not planes:
+    planes = driver.execute_script(plane_script)
+    sleep(3)
 driver.quit()
 display.stop()
 for plane in planes:
