@@ -28,7 +28,6 @@ driver=webdriver.Chrome()
 driver.execute_cdp_cmd('Network.setUserAgentOverride', {"userAgent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.53 Safari/537.36'})
 driver.get("https://globe.adsbexchange.com")
 
-sleep(2)
 driver.execute_script(focus_code)
 attempts = 0
 try:
