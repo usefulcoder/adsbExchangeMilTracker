@@ -17,7 +17,7 @@ options.add_argument('--user-agent="MQQBrowser/26 Mozilla/5.0 (Linux; U; Android
 # options.add_argument("--disable-gpu")
 # options.add_argument("--window-size=1280,1280")
 # options.add_argument("--no-sandbox")
-# options.add_argument("--enable-javascript")
+options.add_argument("--enable-javascript")
 # options.add_experimental_option("excludeSwitches", ["enable-automation"])
 # options.add_experimental_option('useAutomationExtension', False)
 # options.add_argument('--disable-blink-features=AutomationControlled')
